@@ -11,6 +11,24 @@
     <title>Create Order</title>
 </head>
 <body>
-    
+    <div>
+        <form action="/" method="post" class="p-3 col-4 mx-auto my-5 bg-dark text-light">
+            <h2 class="text-center text-primary">Edit {{ninja.first_name}}</h2>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" class="form-control mb-3" value="{{order.name}}">
+            </div>
+            <div class="form-group">
+                <label for="cookie_type">Cookie Type:</label>
+                <input type="text" name="cookie_type" class="form-control mb-3" value="{{order.cookie_type}}">
+            </div>
+            <div class="form-group">
+                <label for="num_of_boxes">Number of boxes:</label>
+                <input type="number" name="num_of_boxes" class="form-control mb-3" value="{{order.num_of_boxes}}">
+            </div>
+            <input type="submit" value="Log" class="btn btn-primary btn-outline-dark">
+        </form>
+        <a href="/">Back to purchases</a>
+    </div>
 </body>
 </html>
