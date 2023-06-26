@@ -9,9 +9,9 @@ def index():
     return render_template('cookie_orders.html')
 
 # create_order HTML Route
-@app.route('/create/new')
+@app.route('/cookies/new')
 def new_order():
-    return render_template('create_order.html')
+    return render_template('create_order.html', methods=['POST'])
 
 # edit_order HTML Route
 @app.route('/cookies/edit/<order_id>')
