@@ -10,6 +10,44 @@
     <title>Cookie Orders</title>
 </head>
 <body>
-    
+    <body>
+        <!-- Container -->
+        <div class="read_all_container">
+            <h1 class="text-left ms-4">Cookie Orders</h1>
+            <!-- Cookie Orders Table -->
+            <table class="table table-hover">
+                <!-- Table Head -->
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Cookie Type</th>
+                        <th>Number of Boxes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <!-- End of Table Head -->
+                <!-- Table Body -->
+                <tbody>
+                    {% for order in orders %}
+                    <!-- Table Row -->
+                        <tr>
+                            <td>{{order.name}}</td>
+                            <td>{{order.cookie_type}}</td>
+                            <td>{{order.num_of_boxes}}</td>
+                            <td>
+                                <a href="#">Edit</a> |
+                            </td>
+                        </tr>
+                        <!-- End of Table Row -->
+                    {% endfor %}
+                </tbody>
+                <!-- End of Table Body -->
+            </table>
+            <!-- End of Cookie Orders Table -->
+            <!-- Add new order Button -->
+            <a href="" class="btn btn-primary ms-4">Add new order</a>
+            <!-- End of Add new order Button -->
+        </div>
+        <!-- End of Container -->
 </body>
 </html>
