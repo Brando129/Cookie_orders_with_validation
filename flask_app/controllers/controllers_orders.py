@@ -7,3 +7,13 @@ from flask_app.models.models_order import Order
 @app.route('/cookies')
 def index():
     return render_template('cookie_orders.html')
+
+# create_order HTML Route
+@app.route('/create/new')
+def new_order():
+    return render_template('create_order.html')
+
+# edit_order HTML Route
+@app.route('/cookies/edit/<order_id>')
+def edit_order(order_id):
+    return render_template('edit_order.html')
