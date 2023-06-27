@@ -17,7 +17,7 @@ class Order:
     @classmethod
     def save(cls, data):
         query = """ INSERT INTO orders (name, cookie_type, num_of_boxes)
-                VALUES %(name)s, %(cookie_type)s, %(num_of_boxes)s;"""
+                VALUES (%(name)s, %(cookie_type)s, %(num_of_boxes)s);"""
         return connectToMySQL(db).query_db(query, data)
 
     # classmethod for selecting a cookie order to edit

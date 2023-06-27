@@ -27,6 +27,7 @@ def edit_order(order_id):
 # Processes the create order route
 @app.route('/cookies/create', methods=['POST'])
 def create_order():
+    models_order.Order.save(request.form)
     return redirect('/cookies')
 
 # Processes the edit route
