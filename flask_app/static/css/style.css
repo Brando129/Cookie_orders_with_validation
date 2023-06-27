@@ -4,6 +4,15 @@
     padding: 0px;
 }
 
+/* flash message color */
 .error {
     color: red;
+}
+
+/* Back to purchases link */
+.purchases_link {
+    font-size: larger;
+    text-decoration: none;
+    margin-left: 225px;
+    color: yellow;
 }
