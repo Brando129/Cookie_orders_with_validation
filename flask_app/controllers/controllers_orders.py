@@ -1,19 +1,35 @@
-from flask import Flask, render_template, session, request
+from flask import Flask, render_template, session, request, redirect 
 from flask_app import app
-from flask_app.models.models_order import Order
+from flask_app.models import models_order
 
-# cookies_orders HTML Route
+# GET Routes
+# Cookie Orders HTML Route
 @app.route('/')
 @app.route('/cookies')
 def index():
     return render_template('cookie_orders.html')
 
-# create_order HTML Route
+# New Order HTML Route
 @app.route('/cookies/new')
 def new_order():
-    return render_template('create_order.html', methods=['POST'])
+    models_order.Order.save(request.form)
+    return render_template('create_order.html')
 
-# edit_order HTML Route
+# Edit Order HTML Route
 @app.route('/cookies/edit/<order_id>')
 def edit_order(order_id):
-    return render_template('edit_order.html')
+    data = {
+        "id": id
+    }
+    return render_template('edit_order.html', order = models_order.Order.get_one(data))
+
+# POST (ACTION) Routes
+# Processes the create order route
+@app.route('/cookies/create', methods=['POST'])
+def create_order():
+    return redirect('/cookies')
+
+# Processes the edit route
+@app.route('/cookies/update', methods=['POST'])
+def update_order():
+    return redirect('/cookies')

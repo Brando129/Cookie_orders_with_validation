@@ -11,6 +11,7 @@ class Order:
         self.name = data['name']
         self.cookie_type = data['cookie_type']
         self.num_of_boxes = data['num_of_boxes']
+        self.orders = []
 
     # classmethod for saving a new cookie order
     @classmethod
