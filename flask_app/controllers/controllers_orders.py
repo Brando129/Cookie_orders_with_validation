@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request, redirect
+from flask import Flask, render_template, request, redirect
 from flask_app import app
 from flask_app.models import models_order
 
@@ -17,9 +17,12 @@ def new_order():
     return render_template('create_order.html')
 
 # Edit Order HTML Route
-@app.route('/cookies/edit/<order_id>')
-def edit_order(order_id):
-    return render_template('edit_order.html')
+@app.route('/cookies/edit/<int:id>')
+def edit_order(id):
+    data = {
+        "id": id
+    }
+    return render_template('edit_order.html', order = models_order.Order.get_one(data))
 
 # POST (ACTION) Routes
 # Processes the create order route
@@ -34,6 +37,6 @@ def create_order():
 @app.route('/cookies/update', methods=['POST'])
 def update_order():
     if models_order.Order.validate_order(request.form):
-        models_order.Order.edit_order(request.form)
+        models_order.Order.update(request.form)
         return redirect('/cookies')
-    return redirect(f"/cookies/edit/{request.form['id']}")
+    return redirect("/cookies/edit/id")
