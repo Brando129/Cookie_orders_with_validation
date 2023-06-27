@@ -46,6 +46,12 @@ class Order:
                 num_of_boxes=%(num_of_boxes)s, updated_at=NOW() WHERE id = %(id)s;"""
         return connectToMySQL(db).query_db(query, data)
 
+    # classmethod for deleting an order
+    @classmethod
+    def destroy(cls, data):
+        query = "DELETE FROM orders WHERE id = %(id)s;"
+        return connectToMySQL(db).query_db(query, data)
+
     # staticmethod for validating an Order
     @staticmethod
     def validate_order(data):

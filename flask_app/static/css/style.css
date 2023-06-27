@@ -9,6 +9,13 @@
     color: red;
 }
 
+/* Edit/Delete Links */
+.edit_link,
+.delete_link {
+    font-size: large;
+    text-decoration: none;
+}
+
 /* Back to purchases link */
 .purchases_link {
     font-size: larger;

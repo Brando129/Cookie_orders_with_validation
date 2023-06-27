@@ -40,3 +40,11 @@ def update_order():
         models_order.Order.update(request.form)
         return redirect('/cookies')
     return redirect("/cookies/edit/id")
+
+@app.route('/cookies/destroy/<int:id>')
+def destroy(id):
+    data = {
+        'id': id
+    }
+    models_order.Order.destroy(data)
+    return redirect('/cookies')

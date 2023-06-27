@@ -15,7 +15,7 @@
         <div class="read_all_container">
             <h1 class="text-left ms-4">Cookie Orders</h1>
             <!-- Cookie Orders Table -->
-            <table class="table table-hover">
+            <table class="table p-3 col-4 mx-auto my-5 table-hover">
                 <!-- Table Head -->
                 <thead>
                     <tr>
@@ -35,7 +35,8 @@
                             <td>{{order.cookie_type}}</td>
                             <td>{{order.num_of_boxes}}</td>
                             <td>
-                                <a href="/cookies/edit/{{order.id}}">Edit</a> 
+                                <a class="edit_link" href="/cookies/edit/{{order.id}}">Edit</a> |
+                                <a class="delete_link" href="cookies/destroy/{{order.id}}">Delete</a>
                             </td>
                         </tr>
                         <!-- End of Table Row -->
