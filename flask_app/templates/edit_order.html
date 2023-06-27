@@ -11,23 +11,34 @@
     <title>Edit Order</title>
 </head>
 <body>
+    <!-- Start of Form -->
     <form action="/cookies/update" method="post" class="p-3 col-4 mx-auto my-5 bg-dark text-light">
-        <h2 class="text-center text-primary">Change Order</h2>
+        <h2 class="text-center text-primary">Change Order - {{order.name}}</h2>
+        <!-- Hidden input to associate the order id -->
         <input type="hidden" name="id" value="{{order.id}}">
+        <!-- Name Input -->
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" name="name" class="form-control mb-3" value="{{order.name}}">
         </div>
+        <!-- End of Name Input -->
+        <!-- Cookie type Input -->
         <div class="form-group">
             <label for="cookie_type">Cookie Type:</label>
             <input type="text" name="cookie_type" class="form-control mb-3" value="{{order.cookie_type}}">
         </div>
+        <!-- End of cookie type Input -->
+        <!-- Number of boxes Input -->
         <div class="form-group">
             <label for="num_of_boxes">Number of boxes:</label>
             <input type="number" name="num_of_boxes" class="form-control mb-3" value="{{order.num_of_boxes}}">
         </div>
+        <!-- End of number of boxes Input -->
+        <!-- Log Button -->
         <input type="submit" value="Log" class="btn btn-primary btn-outline-dark">
     </form>
+    <!-- End of Form -->
+    <!-- Back to purchases link -->
     <a href="/cookies">Back to purchases</a>
 </body>
 </html>

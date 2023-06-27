@@ -51,13 +51,13 @@ class Order:
     def validate_order(data):
         is_valid = True
         if len(data['name']) == 0:
-            flash("We need a name.")
+            flash("Name is required.")
             is_valid = False
         if len(data['cookie_type']) == 0:
-            flash("We need a cookie type.")
+            flash("Type of cookie is required.")
             is_valid = False
         if len(data['num_of_boxes']) == 0:
-            flash("We need the number of boxes.")
+            flash("Number of boxes is required.")
             is_valid = False
         elif int(data['num_of_boxes']) <= 0:
             flash("Number of boxes must be more than 0.")

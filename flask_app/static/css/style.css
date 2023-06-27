@@ -1,0 +1,9 @@
+/* CSS Reset */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.error {
+    color: red;
+}
