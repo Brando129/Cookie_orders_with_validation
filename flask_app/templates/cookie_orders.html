@@ -14,9 +14,6 @@
         <!-- Container -->
         <div class="read_all_container">
             <h1 class="text-left ms-4">Cookie Orders</h1>
-            <!-- Add new order Button -->
-            <a href="/cookies/new" class="btn btn-primary ms-4">Add new order</a>
-            <!-- End of Add new order Button -->
             <!-- Cookie Orders Table -->
             <table class="table table-hover">
                 <!-- Table Head -->
@@ -34,11 +31,11 @@
                     {% for order in orders %}
                     <!-- Table Row -->
                         <tr>
-                            <td>{{orders.name}}</td>
-                            <td>{{orders.cookie_type}}</td>
-                            <td>{{orders.num_of_boxes}}</td>
+                            <td>{{order.name}}</td>
+                            <td>{{order.cookie_type}}</td>
+                            <td>{{order.num_of_boxes}}</td>
                             <td>
-                                <a href="/cookies/edit/order_id">Edit</a> |
+                                <a href="/cookies/edit/order.id">Edit</a> 
                             </td>
                         </tr>
                         <!-- End of Table Row -->
@@ -47,6 +44,9 @@
                 <!-- End of Table Body -->
             </table>
             <!-- End of Cookie Orders Table -->
+            <!-- Add new order Button -->
+            <a href="/cookies/new" class="btn btn-primary ms-4">Add new order</a>
+            <!-- End of Add new order Button -->
         </div>
         <!-- End of Container -->
 </body>
