@@ -1,5 +1,5 @@
 from flask_app import app
-from flask_app.controllers import controllers_orders
+from flask_app.controllers import controllers_orders, controllers_users
 
 
 

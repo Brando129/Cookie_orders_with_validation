@@ -4,11 +4,11 @@ from flask_app.models import models_order
 
 # GET Routes
 # Cookie Orders HTML Route
-@app.route('/')
-@app.route('/cookies')
-def index():
-    all_orders = models_order.Order.get_all('data')
-    return render_template('cookie_orders.html', orders = all_orders)
+# @app.route('/')
+# @app.route('/cookies')
+# def index():
+#     all_orders = models_order.Order.get_all('data')
+#     return render_template('cookie_orders.html', orders = all_orders)
 
 # New Order HTML Route
 @app.route('/cookies/new')

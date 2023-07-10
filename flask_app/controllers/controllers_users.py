@@ -1,6 +1,6 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
-from flask_app.models import models_user
+from flask_app.models import models_user, models_order
 # Bcrypt import
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app) # We are creating an object called bcrypt,
@@ -10,7 +10,7 @@ bcrypt = Bcrypt(app) # We are creating an object called bcrypt,
 # Route for rendering the "Dashboard Page"
 @app.route('/')
 def index():
-    return render_template('dashboard.html')
+    return render_template('registration_and_login.html')
 
 # Route for checking if a user is in session.
 @app.route('/homepage')
@@ -22,7 +22,8 @@ def check_session():
         "id": session['user_id']
     }
     print("Successfully got the user id...")
-    return render_template('cookie_order.html', user=models_user.User.get_by_id(data))
+    all_orders = models_order.Order.get_all('data')
+    return render_template('cookie_orders.html', user=models_user.User.get_by_id(data), orders = all_orders)
 
 # Route for logging a user out
 @app.route('/logout')
