@@ -13,6 +13,15 @@
     <body>
         <!-- Container -->
         <div class="container col-md-10">
+        <!-- Navbar -->
+        <div class="navbar bg-dark text-light justify-content-between p-3">
+            <h3 class="text-light">Welcome, {{user.first_name}}</h3>
+            <div>
+                <a href="/rides/new" class="btn back_to_home btn-primary">Request a Ride</a>
+                <a href="/logout" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+        <!-- End of Navbar -->
             <h1 class="text-center ms-4">Cookie Orders</h1>
             <!-- Cookie Orders Table -->
             <table class="table table-dark table-bordered table-hover">
