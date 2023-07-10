@@ -13,17 +13,6 @@
     <body>
         <!-- Container -->
         <div class="container col-md-10">
-        <!-- Navbar -->
-        <div class="navbar bg-dark text-light justify-content-between p-3">
-            <h3 class="text-light">Welcome, {{user.first_name}} </h3>
-            <div>
-                <!-- Add new order Button -->
-                <a href="/cookies/new" class="btn btn-primary ms-1">Add new order</a>
-                <!-- End of Add new order Button -->
-                <a href="/logout" class="btn btn-primary">Logout</a>
-            </div>
-        </div>
-        <!-- End of Navbar -->
             <h1 class="text-center ms-4">Cookie Orders</h1>
             <!-- Cookie Orders Table -->
             <table class="table table-dark table-bordered table-hover">
@@ -56,6 +45,9 @@
                 <!-- End of Table Body -->
             </table>
             <!-- End of Cookie Orders Table -->
+            <!-- Add new order Button -->
+            <a href="/cookies/new" class="btn btn-primary ms-1">Add new order</a>
+            <!-- End of Add new order Button -->
         </div>
         <!-- End of Container -->
 </body>
